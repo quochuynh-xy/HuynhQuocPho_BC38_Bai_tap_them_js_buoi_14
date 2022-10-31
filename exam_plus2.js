@@ -19,31 +19,36 @@
  * OUTPUT:
  * In ra tháng nhập vào có bao nhiêu ngày
  */
-var month = 12;
-var year = 2024;
-switch (month) {
-  case 1:
-  case 3:
-  case 5:
-  case 7:
-  case 8:
-  case 10:
-  case 12:
-    console.log("Tháng có 31 ngày");
-    break;
-  case 4:
-  case 6:
-  case 9:
-  case 11:
-    console.log("Tháng có 30 ngày");
-    break;
-  case 2:
-    if ((year % 4 == 0 && year / 100 != 0) || year % 400 == 0) {
-      console.log("Tháng có 29 ngày");
-    } else {
-      console.log("Tháng có 28 ngày");
+function handldeCheckDate() {
+  var month = document.getElementById("ex2Month").value * 1;
+  var year = document.getElementById("ex2Year").value * 1;
+  var message = document.getElementById("exam2Result");
+  if (year < 100 || month < 1 || month > 12) {
+    alert("Nhập đúng tháng - năm (năm >100)");
+  } else {
+    switch (month) {
+      case 1:
+      case 3:
+      case 5:
+      case 7:
+      case 8:
+      case 10:
+      case 12:
+        message.innerHTML = "Tháng có 31 ngày";
+        break;
+      case 4:
+      case 6:
+      case 9:
+      case 11:
+        message.innerHTML = "Tháng có 30 ngày";
+        break;
+      default:
+        2;
+        if ((year % 4 == 0 && year / 100 != 0) || year % 400 == 0) {
+          message.innerHTML = "Tháng có 29 ngày";
+        } else {
+          message.innerHTML = "Tháng có 28 ngày";
+        }
     }
-    break;
-  default:
-    console.log("Nhập sai tháng");
+  }
 }

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập thêm JS buổi 14</title>
+    <link
+      rel="icon"
+      href="https://cdn2.iconfinder.com/data/icons/miscellaneous-31/60/book-write-256.png"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container text-center my-5 w-75">
+      <h3>Bài tập thêm JS buổi 14</h3>
+      <div class="tab">
+        <button
+          onclick="handleChangeTab(event)"
+          data-tab--show="tab1"
+          id="exam1"
+          class="bg-success"
+        >
+          Bài tập 1
+        </button>
+        <button
+          onclick="handleChangeTab(event)"
+          data-tab--show="tab2"
+          id="exam2"
+          class=""
+        >
+          Bài tập 2
+        </button>
+        <button
+          onclick="handleChangeTab(event)"
+          data-tab--show="tab3"
+          id="exam3"
+          class=""
+        >
+          Bài tập 3
+        </button>
+        <button
+          onclick="handleChangeTab(event)"
+          data-tab--show="tab4"
+          id="exam4"
+          class=""
+        >
+          Bài tập 4
+        </button>
+      </div>
+      <!-- Bài tập 1 -->
+      <section id="tab1" class="d-block tab-info my-2">
+        <p>
+          Nhập vào ngày tháng năm, tìm ngày tháng năm của ngày tiếp theo và ngày
+          tháng năm của ngày trước đó.
+        </p>
+        <img class="img-fluid" src="./img/1.JPG" alt="img1" />
+        <hr />
+        <h5>Nhập đúng ngày tháng năm</h5>
+        <input
+          id="date"
+          type="number"
+          class="w-25 px-2"
+          placeholder=" nhập ngày"
+        />
+        <input
+          id="month"
+          type="number"
+          class="w-25 px-2"
+          placeholder=" nhập tháng"
+        />
+        <input
+          id="year"
+          type="number"
+          class="w-25 px-2"
+          placeholder=" nhập năm (> 100)"
+        />
+        <button onclick="findDate()">Kiểm tra</button>
+        <p id="exam1Result" class="my-2 py-1">--------</p>
+        <p id="exam1Result2" class="my-2 py-1">--------</p>
+      </section>
+      <!-- Bài tập 2 -->
+      <section id="tab2" class="d-none tab-info my-2">
+        <p>
+          Nhập vào tháng, năm và cho biết tháng đó có bao nhiêu ngày (bao gồm
+          tháng của năm nhuận)
+        </p>
+        <img class="img-fluid" src="./img/2.JPG" alt="img2" />
+        <hr />
+        <h5>Nhập vào tháng / năm</h5>
+        <input id="ex2Month" type="number" class="w-25" placeholder="Tháng" />
+        <input id="ex2Year" type="number" class="w-25" placeholder="Năm" />
+        <button onclick="handldeCheckDate()" class="">Kiểm tra</button>
+        <p id="exam2Result" class="my-2 py-1">--------</p>
+      </section>
+      <!-- Bài tập 3 -->
+      <section id="tab3" class="d-none tab-info my-2">
+        <p>
+          Nhập vào số nguyên có 3 chữ số, in ra cách đọc
+        </p>
+        <img src="./img/3.JPG" alt="img3" />
+        <hr />
+        <h5>Nhập vào số nguyên có 3 chữ số</h5>
+        <input
+          id="ex3_number"
+          type="number"
+          placeholder="Nhập số, vd: 235"
+          class="text-center"
+        />
+        <button onclick="readNumber()" id="" class="my-3">
+          In ra chữ
+        </button>
+        <p id="exam3Result">--------</p>
+      </section>
+      <!-- Bài tập 4 -->
+      <section id="tab4" class="d-none tab-info my-2">
+        <p>
+          Nhập vào tọa độ nhà của 3 học sinh và tọa độ của trường học, cho biết học sinh nào xa trường nhất
+        </p>
+        <img class="img-fluid" src="./img/4.JPG" alt="img4" />
+        <hr />
+        <div class="row">
+          <div class="col-3">
+            <p>Tọa độ trường</p>
+            <input id="schoolX" type="number" class="w-50 text-center" placeholder="x">
+            <input id="schoolY" type="number" class="w-50 text-center" placeholder="y">
+          </div>
+          <div class="col-3">
+            <p>Tọa độ SV1</p>
+            <input id="student1X" type="number" class="w-50 text-center" placeholder="x">
+            <input id="studen1Y" type="number" class="w-50 text-center" placeholder="y">
+          </div>
+          <div class="col-3">
+            <p>Tọa độ SV2</p>
+            <input id="student2X" type="number" class="w-50 text-center" placeholder="x">
+            <input id="studen2Y" type="number" class="w-50 text-center" placeholder="y">
+          </div>
+          <div class="col-3">
+            <p>Tọa độ SV3</p>
+            <input id="student3X" type="number" class="w-50 text-center" placeholder="x">
+            <input id="studen3Y" type="number" class="w-50 text-center" placeholder="y">
+          </div>
+        </div>
+        <button onclick="handleDistance()" class="my-3">
+          Tìm xem ai xa nhất
+        </button>
+        <p id="exam4Result">--------</p>
+      </section>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function handleChangeTab(e) {
+        document.getElementById("exam1").classList.remove("bg-success");
+        document.getElementById("exam2").classList.remove("bg-success");
+        document.getElementById("exam3").classList.remove("bg-success");
+        document.getElementById("exam4").classList.remove("bg-success");
+        e.target.classList.add("bg-success");
+
+        var selectedTab = e.target.getAttribute("data-tab--show");
+        document.getElementById("tab1").classList.remove("d-block");
+        document.getElementById("tab2").classList.remove("d-block");
+        document.getElementById("tab3").classList.remove("d-block");
+        document.getElementById("tab4").classList.remove("d-block");
+        document.getElementById("tab1").classList.add("d-none");
+        document.getElementById("tab2").classList.add("d-none");
+        document.getElementById("tab3").classList.add("d-none");
+        document.getElementById("tab4").classList.add("d-none");
+        document.getElementById(selectedTab).classList.remove("d-none");
+        document.getElementById(selectedTab).classList.add("d-block");
+      }
+    </script>
+    <script src="./exam_plus1.js"></script>
+    <script src="./exam_plus2.js"></script>
+    <script src="./exam_plus3.js"></script>
+    <script src="./exam_plus4.js"></script>
+  </body>
+</html>
